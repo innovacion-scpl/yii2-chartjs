@@ -92,6 +92,8 @@ class Chart extends \yii\base\Widget
      */
     protected $_datasets = [];
 
+    public $plugins = [];
+
     /**
      * Initializes the widget building the dataset and addling all of the
      * default options
@@ -150,7 +152,8 @@ class Chart extends \yii\base\Widget
             'data' => [
                 'datasets' => $this->_datasets,
                 'labels' => $this->labels,
-            ]
+            ],
+            'plugins' => $this->plugins,
         ];
 
         $json = Json::encode($clientOptions);
